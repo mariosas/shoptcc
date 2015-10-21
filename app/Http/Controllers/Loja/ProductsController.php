@@ -6,8 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Loja;
 use App\Repositories\Eloquent\ProductInt;
+use App\Http\Controllers\Controller;
 /**
  * Description of ProductsController
  *

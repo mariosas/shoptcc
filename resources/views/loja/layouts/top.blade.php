@@ -23,6 +23,9 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+                <li>
+                    <a href="{{url('cart')}}">Cart (<?php echo \Cart::count()?>) </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

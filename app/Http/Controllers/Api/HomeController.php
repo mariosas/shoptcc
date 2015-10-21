@@ -6,9 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Repositories\Eloquent\ProductInt;
+use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\CategoryInt;
 
 /**
@@ -27,10 +28,9 @@ class HomeController extends Controller {
     }
 
     public function home() {
-    	$products = $this->repository->paginate(12);
-        $products = $products->where('published', 1);
-        
-        return view('loja::page.home', compact('products'));
+        $products = $this->repository->with('reviews')->findWhere(['published' => 1]);
+        //return view('loja::page.home', compact('products'));
+        return $products;
     }
 
 }

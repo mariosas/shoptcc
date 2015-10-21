@@ -11,6 +11,7 @@ namespace App\Repositories\Eloquent;
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\Entities\Product;
 
+
 /**
  * Description of ProductRepository
  *

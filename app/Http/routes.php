@@ -1,18 +1,32 @@
 <?php
 
-
 Route::get('/', 'HomeController@Home');
-Route::get('product/{id}', 'ProductsController@show');
-Route::get('category/{id}', 'CategoryController@show');
-Route::get('category/{idCategory}/{idSubCategory}', 'CategoryController@show1');
-Route::post('store-review', 'ReviewsController@storeReviewForProduct');
+Route::get('product/{id}', 'Loja\ProductsController@show');
+Route::get('category/{id}', 'Loja\CategoryController@show');
+Route::get('category/{idCategory}/{idSubCategory}', 'Loja\CategoryController@show1');
+Route::post('store-review', 'Loja\ReviewsController@storeReviewForProduct');
 
-Route::get('cart', 'CartController@getCart');
-Route::get('cart/add-product-cart/{id}', 'CartController@addProductCart');
-Route::put('cart/update', 'CartController@update');
-Route::delete('cart/destroy', 'CartController@destroy');
+Route::get('cart', 'Loja\CartController@getCart');
+Route::get('cart/add-product-cart/{id}', 'Loja\CartController@addProductCart');
+Route::get('cart/update/{id}/{tipo}', 'Loja\CartController@updateQtd');
+Route::get('cart/destroy', 'Loja\CartController@destroy');
+Route::get('cart/remove/{id}', 'Loja\CartController@remove');
 
-// Route that handles submission of review - rating/comment
-Route::post('products/{id}', array('before' => 'csrf', function($id) {
-        return 'Review submitted for product ' . $id;
-    }));
+
+//Api
+Route::get('api/home', 'Api\HomeController@Home');
+Route::get('api/product/{id}', 'Api\ProductsController@show');
+Route::get('api/category/{id}', 'Api\CategoryController@show');
+Route::get('api/category/{idCategory}/{idSubCategory}', 'Api\CategoryController@show1');
+Route::post('api/store-review', 'Api\ReviewsController@storeReviewForProduct');
+
+Route::get('api/cart', 'Loja\CartController@getCart');
+Route::get('api/cart/add-product-cart/{id}', 'Loja\CartController@addProductCart');
+Route::get('api/cart/update/{id}/{tipo}', 'Loja\CartController@updateQtd');
+Route::get('api/cart/destroy', 'Loja\CartController@destroy');
+Route::get('api/cart/remove/{id}', 'Loja\CartController@remove');
+
+
+Event::listen('illuminate.query', function ($sql) {
+	//print_R($sql);
+});

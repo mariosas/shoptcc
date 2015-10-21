@@ -11,9 +11,6 @@
                     <h4>{{$product->name}}</h4>
                     <p>{{$product->short_description}}</p>
                 </div>
-                <div class="col-sm-12">
-                    <a href="{{url('add-product-cart')}}/{{$product->id}}" class="pull-right btn btn-success">Comprar</a>
-                </div>
                 <div class="ratings">
                     <p class="pull-right">{{$product->rating_count}} reviews</p>
                     <p>

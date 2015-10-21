@@ -19,13 +19,7 @@ interface CartInt {
      * @param type $id
      * @param type $qtd
      */
-    public function add($id, $qtd);
-
-    /**
-     * 
-     * @param type $key
-     */
-    public function find($key);
+    public function add($id, $qtd);  
 
     /**
      * 
@@ -38,10 +32,28 @@ interface CartInt {
      */
     public function destroy();
 
+   
+    /**
+     * 
+     * @param unknown $product
+     */
+    public function remove($product);
     
     /**
      * 
-     * @param type $key
+     * @param unknown $product
+     * @param unknown $value
      */
-    public function exists($key);
+    public function updateQtd($product, $value);
+    
+    /**
+     *
+     * @param unknown $product
+     */
+    public function find($product);
+    
+    /**
+     * 
+     */
+    public function countItens();
 }

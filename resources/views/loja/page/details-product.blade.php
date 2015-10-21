@@ -2,10 +2,6 @@
 
 @section('content')
 
-<?php
-//dd($product->reviews);
-?>
-
 <div class="col-md-9">
     <div class="thumbnail">
         <img class="img-responsive" src="{{$product->icon}}" height="300px" width="200px" alt="">
@@ -16,7 +12,19 @@
             <p>{{$product->short_description}}</p>
             <p>{{$product->long_description}}</p>
         </div>
-        <div class="ratings">
+
+		<div class="col-sm-12" id="btnComprar">
+			<a href="{{url('cart/add-product-cart')}}/{{$product->id}}"
+				class="pull-right btn btn-success">Comprar</a>
+		</div>
+		
+		<style>
+		#btnComprar {
+			margin-bottom: 7px;
+		}
+		</style>
+
+		<div class="ratings">
             <p class="pull-right">{{$product->rating_count}} reviews</p>
             <p>
                 @for($i = 1; $i <= $product->rating_cache; $i++)

@@ -35,28 +35,12 @@ class CartRepository implements CartInt {
         $product = $this->product->find($id);
         \Cart::add($product->id, $product->name, $qtd, $product->pricing, array('icon' => $product->icon));
     }
-    
-    /**
-     * search a product at car
-     * @param type $key
-     */
-    public function find($key) {
-        //return $this->request->session()->get($key);
-    }
 
     /**
      * return all products of car
      */
     public function all() {
         return \Cart::content();
-    }
-
-    /**
-     * delete a product of car
-     * @param type $key
-     */
-    public function delete($key) {
-        $this->request->session()->forget($key);
     }
     
     /**
@@ -67,17 +51,46 @@ class CartRepository implements CartInt {
     }
     
     /**
-     * verify if exists product
-     * @param type $key
+     * 
+     * {@inheritDoc}
+     * @see \App\Repositories\CartInt::remove()
      */
-    public function exists($key){
-        if(!$this->request->session()->has($key)){
-            return false;
-        }
+    public function remove($product){
+    	\Cart::remove($product);
     }
-
-    public function clear() {
-        
+    
+    /**
+     * 
+     */
+    public function total(){
+    	return \Cart::total();
+    }
+    
+    
+    /**
+     * 
+     * @param unknown $product
+     * @param unknown $value
+     */
+    public function updateQtd($product, $value){
+    	\Cart::update($product, $value);	
+    }
+    
+    /**
+     * 
+     * @param unknown $product
+     */
+    public function find($product){
+    	return \Cart::get($product);
+    }
+    
+    /**
+     * 
+     * {@inheritDoc}
+     * @see \App\Repositories\CartInt::countItens()
+     */
+    public function countItens(){
+    	return \Cart::count();
     }
 
 }
