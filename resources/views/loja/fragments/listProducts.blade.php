@@ -5,7 +5,7 @@
         <div class="thumbnail">
             <a href="{{url('product')}}/{{$product->id}}">
             <!--<img src="http://placehold.it/320x150" alt="">-->
-                <img src="{{$product->icon}}" alt="{{$product->short_description}}" title="{{$product->short_description}}" class="img-product">
+                <img src="{{url('/')}}/{{$product->icon}}" alt="{{$product->short_description}}" title="{{$product->short_description}}" class="img-product">
                 <div class="caption">
                     <h4 class="pull-right">R$ {{$product->pricing}}</h4>
                     <h4>{{$product->name}}</h4>

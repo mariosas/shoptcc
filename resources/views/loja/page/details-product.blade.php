@@ -4,7 +4,7 @@
 
 <div class="col-md-9">
     <div class="thumbnail">
-        <img class="img-responsive" src="{{$product->icon}}" height="300px" width="200px" alt="">
+        <img class="img-responsive" src="{{url('/')}}/{{$product->icon}}" height="300px" width="200px" alt="">
         <div class="caption-full">
             <h4 class="pull-right">R$ {{$product->pricing}}</h4>
             <h4><a href="#"> {{$product->name}}</a>

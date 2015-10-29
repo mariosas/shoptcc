@@ -11,6 +11,7 @@ Route::get('cart/add-product-cart/{id}', 'Loja\CartController@addProductCart');
 Route::get('cart/update/{id}/{tipo}', 'Loja\CartController@updateQtd');
 Route::get('cart/destroy', 'Loja\CartController@destroy');
 Route::get('cart/remove/{id}', 'Loja\CartController@remove');
+Route::get('checkout', 'Loja\CartController@checkout');
 
 
 //Api

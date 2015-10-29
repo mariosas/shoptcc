@@ -154,6 +154,10 @@ return [
         
         //ShopCart
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+    		
+    	Barryvdh\Debugbar\ServiceProvider::class,
+    		
+    	laravel\pagseguro\PagseguroServiceProvider::class
 
     ],
 
@@ -204,6 +208,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Authorizer'=> LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
         'Cart'      => Gloudemans\Shoppingcart\Facades\Cart::class,
+    	'Debugbar' => Barryvdh\Debugbar\Facade::class,
+    	'PagSeguro' => laravel\pagseguro\Facades\PagSeguro::class
 
     ],
 

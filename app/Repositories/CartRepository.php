@@ -33,7 +33,18 @@ class CartRepository implements CartInt {
      */
     public function add($id, $qtd) {
         $product = $this->product->find($id);
-        \Cart::add($product->id, $product->name, $qtd, $product->pricing, array('icon' => $product->icon));
+        \Cart::add($product->id, $product->name, $qtd, $product->pricing, array('icon' => $product->icon 
+		) );
+		
+		$obj = array (
+				'itemId1' => '0001',
+				'itemDescription1' => 'Notebook Prata 1as',
+				'itemQuantity1' => '1',
+				'itemAmount1' => '12.00',
+				'itemWeight1' => '1000',
+						'itemShippingCost1' => null);
+        
+        $this->request->session()->put("r", $obj);
     }
 
     /**
