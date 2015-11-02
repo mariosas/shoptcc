@@ -8,7 +8,7 @@
             	@if($totalItens < 1)
 
 				<div class="panel">
-					<span>No products</span>
+					<span><a href="{{url('')}}">Back</a></span>
 				</div>
 
 				@else
@@ -54,8 +54,8 @@
 							</td>
 
 
-							<td class="col-sm-1 col-md-1 text-center"><strong>R$ {{$cart->price}}</strong></td>
-                            <td class="col-sm-1 col-md-1 text-center"><strong>R$ <?php echo ($cart->price * $cart->qty) ?></strong></td>
+							<td class="col-sm-1 col-md-1 text-center"><strong>R$ {{number_format($cart->price, 2, ",",".")}}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>R$ <?php echo number_format(($cart->price * $cart->qty), 2, ",",".") ?></strong></td>
                             <td class="col-sm-1 col-md-1">
                                 <a href="{{url('cart/remove')}}/{{$cart->rowid}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Remove</a>
                             </td>
@@ -68,7 +68,7 @@
                             <td> </td>
                             <td><h5>Subtotal</h5></td>
                             <td class="text-right"><h5>
-                                    <strong>R$ {{$total}}</strong>
+                                    <strong>R$ {{number_format($total, 2, ",",".")}}</strong>
                                 </h5></td>
                         </tr>
                         <tr>
@@ -77,7 +77,7 @@
                             <td> </td>
                             <td><h3>Total</h3></td>
                             <td class="text-right"><h3>
-                                    <strong>R$ {{$total}}</strong>
+                                    <strong>R$ {{number_format($total, 2, ",",".")}}</strong>
                                 </h3></td>
                         </tr>
                         <tr>

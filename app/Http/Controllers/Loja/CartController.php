@@ -116,8 +116,8 @@ class CartController extends Controller {
 			$array['itemId'. $i] = array (
 					'itemId'. $i => "".$car->id."",
 					'itemDescription'. $i => $car->name,
-					'itemQuantity'. $i => "".$car->qty."",
-					'itemAmount'. $i => "".$car->price."0",
+					'itemQuantity'. $i => "".$car->qty,
+					'itemAmount'. $i => "".$car->price,
 					'itemWeight'. $i => "1",
 					'itemShippingCost'. $i => null
 			);
@@ -138,7 +138,7 @@ class CartController extends Controller {
 				'sender' => array (
 						'senderName' => 'Mario sergio',
 						'senderCPF' => '06566463577',
-						'senderEmail' => 'mariosergio952@hotmail.com.br',
+						'senderEmail' => 'mariosergio9520@hotmail.com.br',
 						'phone' => [ 
 								'senderAreaCode' => 11,
 								'senderPhone' => '9631-8199' 

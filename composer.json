@@ -13,7 +13,8 @@
         "league/fractal": "^0.12.0",
         "gloudemans/shoppingcart": "~1.3",
         "barryvdh/laravel-debugbar": "^2.0",
-        "michael/laravelpagseguro": "^0.4.1"
+        "michael/laravelpagseguro": "^0.4.1",
+        "cagartner/correios-consulta": "0.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
