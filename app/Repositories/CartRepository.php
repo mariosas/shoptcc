@@ -35,6 +35,7 @@ class CartRepository implements CartInt {
         $product = $this->product->find($id);
         
         $price = number_format($product->pricing, 2);
+        $price = str_replace(",", "", $price);
         
         \Cart::add($product->id, $product->name, $qtd, $price, array('icon' => $product->icon 
 		) );

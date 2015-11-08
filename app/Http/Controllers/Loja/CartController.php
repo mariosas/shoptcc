@@ -18,9 +18,11 @@ use Illuminate\Http\Request;
  * @author mario
  */
 class CartController extends Controller {
+	
 	private $service;
 	private $repository;
 	private $request;
+	
 	public function __construct(CartServices $service, CartRepository $cart, Request $request) {
 		$this->service = $service;
 		$this->repository = $cart;
@@ -97,7 +99,7 @@ class CartController extends Controller {
 				'number' => '1077',
 				'complement' => '',
 				'district' => 'Barra do jAcuipe',
-				'city' => 'Camaçri',
+				'city' => 'Camaçari',
 				'state' => 'BA',
 				'country' => 'BRA' 
 		);

@@ -13,18 +13,21 @@ Route::get('cart/add-product-cart/{id}', 'Loja\CartController@addProductCart');
 Route::get('cart/update/{id}/{tipo}', 'Loja\CartController@updateQtd');
 Route::get('cart/destroy', 'Loja\CartController@destroy');
 Route::get('cart/remove/{id}', 'Loja\CartController@remove');
-Route::get('checkout', 'Loja\CartController@checkout');
 
+Route::group(['middleware' => ['auth']], function (){
+	Route::get('checkout', 'Loja\CartController@checkout');
+});
+
+Route::get('login', function() {
+	return view("auth.login");
+});
+
+Route::get('login-google', 'Auth\AuthController@redirectToProvider');
 
 //Admin
 
 Route::get('admin/product', 'Admin\ProductsController@index');
 Route::get('admin/product/{id}/edit', 'Admin\ProductsController@edit');
-
-
-
-
-
 
 
 

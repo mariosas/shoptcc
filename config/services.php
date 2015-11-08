@@ -34,5 +34,12 @@ return [
         'key'    => '',
         'secret' => '',
     ],
+	
+	'google' => [
+			'client_id' => '909142996189-9t59jcj5sdi5midapih3h4lsrigs7f34.apps.googleusercontent.com',
+			'client_secret' => 't-HlgNTp03uQcj9ZxsR5Y4Gj',
+			'redirect' => 'http://127.0.0.1/ShopTCC/public/google-calback',
+	],
+	
 
 ];
