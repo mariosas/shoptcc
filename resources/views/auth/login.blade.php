@@ -14,7 +14,10 @@
 				<div class="social-auth-links text-center">
 					<a href="{{url('login-google')}}"
 						class="btn btn-block btn-social btn-google-plus btn-flat"><i
-						class="fa fa-google-plus"></i> Entrar usando Google+</a>
+						class="fa fa-google-plus"></i> Entrar usando Google</a>
+					<a href="{{url('login-github')}}"
+						class="btn btn-block btn-social btn-github btn-flat"><i
+						class="fa fa-github"></i> Entrar usando GitHub</a>
 				</div>
 				<!-- /.social-auth-links -->
 			</form>

@@ -22,15 +22,16 @@ Route::get('login', function() {
 	return view("auth.login");
 });
 
-Route::get('callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('login-github', 'Auth\AuthController@redirectToProviderGitHub');
+Route::get('github-callback', 'Auth\AuthController@handleProviderCallbackGitHub');
 
-Route::get('login-google', 'Auth\AuthController@redirectToProvider');
+Route::get('login-google', 'Auth\AuthController@redirectToProviderGoogle');
+Route::get('google-callback', 'Auth\AuthController@handleProviderCallbackGoogle');
 
 //Admin
 
 Route::get('admin/product', 'Admin\ProductsController@index');
 Route::get('admin/product/{id}/edit', 'Admin\ProductsController@edit');
-
 
 
 //Api

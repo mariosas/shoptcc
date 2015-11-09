@@ -12,7 +12,7 @@ class AuthController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function redirectToProvider()
+	public function redirectToProviderGitHub()
 	{
 		return Socialite::driver('github')->redirect();
 	}
@@ -22,9 +22,53 @@ class AuthController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function handleProviderCallback()
+	public function handleProviderCallbackGitHub()
 	{
-		$user = Socialite::driver('github')->user();
+		dd(Socialite::driver('github')->user());
+	
+		// $user->token;
+	}
+	
+	/**
+	 * Redirect the user to the Google authentication page.
+	 *
+	 * @return Response
+	 */
+	public function redirectToProviderGoogle()
+	{
+		return Socialite::driver('google')->redirect();
+	}
+	
+	/**
+	 * Obtain the user information from Google.
+	 *
+	 * @return Response
+	 */
+	public function handleProviderCallbackGoogle()
+	{
+		dd(Socialite::driver('google')->user());
+	
+		// $user->token;
+	}
+	
+	/**
+	 * Redirect the user to the Facebook authentication page.
+	 *
+	 * @return Response
+	 */
+	public function redirectToProviderFacebook()
+	{
+		return Socialite::driver('facebook')->redirect();
+	}
+	
+	/**
+	 * Obtain the user information from Facebook.
+	 *
+	 * @return Response
+	 */
+	public function handleProviderCallbackFacebook()
+	{
+		dd(Socialite::driver('facebook')->user());
 	
 		// $user->token;
 	}
