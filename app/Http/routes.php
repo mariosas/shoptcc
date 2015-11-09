@@ -22,9 +22,7 @@ Route::get('login', function() {
 	return view("auth.login");
 });
 
-Route::get('callback', function (){
-   return 'callback' ;
-});
+Route::get('callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::get('login-google', 'Auth\AuthController@redirectToProvider');
 
