@@ -44,7 +44,7 @@ return [
 	'github' => [
 			'client_id' => '9228161563cb6ab7e6e4',
 			'client_secret' => 'cd1bbce1ad9457627dce2d3f8f7295ea9a8c28a4',
-			'redirect' => 'http://shoptcc.herokuapp.com/github-callback',
+			'redirect' => 'http://shoptcc.herokuapp.com/public/github-callback',
 	],
 
 ];

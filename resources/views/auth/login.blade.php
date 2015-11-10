@@ -7,8 +7,7 @@
 		<!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">Entre para iniciar sua sessão
-			
-			
+						
 			<form method="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="social-auth-links text-center">

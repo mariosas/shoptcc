@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Socialite;
 use Illuminate\Routing\Controller;
+use App\Entities\User;
 
 class AuthController extends Controller {
    
@@ -24,7 +25,25 @@ class AuthController extends Controller {
 	 */
 	public function handleProviderCallbackGitHub()
 	{
-		dd(Socialite::driver('github')->user());
+		$user =  Socialite::driver('github')->user();
+		
+		$userDB = \DB::table('users')->where('email', $user->email)->first();
+		
+		if ($user->email == $userDB->email) {
+			\Auth::loginUsingId($userDB->id);
+			return redirect("checkout");
+		}
+		
+		$usuario = new User();
+		$usuario->name = $user->name;
+		$usuario->email = $user->email;
+		$usuario->avatar = $user->avatar;
+		$usuario->password = bcrypt($user->id);
+		$usuario->save();
+		
+		\Auth::loginUsingId($usuario->id);
+		
+		return redirect("checkout");
 	
 		// $user->token;
 	}
@@ -47,7 +66,7 @@ class AuthController extends Controller {
 	public function handleProviderCallbackGoogle()
 	{
 		dd(Socialite::driver('google')->user());
-	
+		
 		// $user->token;
 	}
 	

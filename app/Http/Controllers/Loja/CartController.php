@@ -138,9 +138,9 @@ class CartController extends Controller {
 				'items' => CartController::transformable ( $carrinho ),
 				'address' => CartController::address (),
 				'sender' => array (
-						'senderName' => 'Mario sergio',
+						'senderName' => \Auth::user()->name,
 						'senderCPF' => '06566463577',
-						'senderEmail' => 'mariosergio9520@hotmail.com.br',
+						'senderEmail' => \Auth::user()->email,
 						'phone' => [ 
 								'senderAreaCode' => 11,
 								'senderPhone' => '9631-8199' 
