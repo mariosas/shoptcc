@@ -65,7 +65,25 @@ class AuthController extends Controller {
 	 */
 	public function handleProviderCallbackGoogle()
 	{
-		dd(Socialite::driver('google')->user());
+		$user =  Socialite::driver('google')->user();
+		
+		$userDB = \DB::table('users')->where('email', $user->email)->first();
+		
+		if ($user->email == $userDB->email) {
+			\Auth::loginUsingId($userDB->id);
+			return redirect("checkout");
+		}
+		
+		$usuario = new User();
+		$usuario->name = $user->name;
+		$usuario->email = $user->email;
+		$usuario->avatar = $user->avatar;
+		$usuario->password = bcrypt($user->id);
+		$usuario->save();
+		
+		\Auth::loginUsingId($usuario->id);
+		
+		return redirect("checkout");
 		
 		// $user->token;
 	}

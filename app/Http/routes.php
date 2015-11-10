@@ -22,6 +22,11 @@ Route::get('login', function() {
 	return view("auth.login");
 });
 
+Route::get('sair', function() {
+	\Auth::logout();
+	return redirect("/");
+});
+
 Route::get('login-github', 'Auth\AuthController@redirectToProviderGitHub');
 Route::get('github-callback', 'Auth\AuthController@handleProviderCallbackGitHub');
 

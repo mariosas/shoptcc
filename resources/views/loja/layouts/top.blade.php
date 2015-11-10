@@ -32,6 +32,7 @@
 					aria-expanded="false">{{Auth::user()->name}} <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><img class="img-circle" src="{{Auth::user()->avatar}}" height="30px" width="30px"></li>
+						<li><a href="{{url('sair')}}">Sair</a></li>
 					</ul>
 				</li>
 			</ul>
