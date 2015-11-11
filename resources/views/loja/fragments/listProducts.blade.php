@@ -10,14 +10,14 @@
                 	<h4>{{$product->name}}</h4>
                     <p>{{$product->short_description}}</p>
                 </div>
-                <div class="ratings">
+                <!--  <div class="ratings">
                     <p class="pull-right">{{$product->rating_count}} reviews</p>
                     <p>
                         @for($i = 1; $i <= $product->rating_cache; $i++)
                         <span class="glyphicon glyphicon-star"></span>
                         @endfor
                     </p>
-                </div>
+                </div>-->
             </a>
         </div>
     </div>

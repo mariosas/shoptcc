@@ -149,12 +149,11 @@ class CartController extends Controller {
 				'currency' => 'BRL' 
 		);
 		
-		//dd ( $dados );
-		
 		$request = \PagSeguro::setRequest ( $dados );
 		$request->sendRequest ();
 		
 		$code = $request->request->getCode ();
+		//return redirect ( "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $code );
 		return redirect ( "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $code );
 	}
 }

@@ -69,10 +69,10 @@ class AuthController extends Controller {
 		
 		$userDB = \DB::table('users')->where('email', $user->email)->first();
 		
-		if ($user->email == $userDB->email) {
+		if ($userDB != null && ($user->email == $userDB->email)) {
 			\Auth::loginUsingId($userDB->id);
 			return redirect("checkout");
-		}
+		}	
 		
 		$usuario = new User();
 		$usuario->name = $user->name;

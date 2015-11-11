@@ -39,8 +39,7 @@
         </div>
     </div>
 
-    <div class="well">
-
+    <!--  <div class="well">
         <div class="container col-md-12">
             <div class="row" style="margin-top:50px">
                 <div class="col-md-12">
@@ -79,7 +78,7 @@
         </div>
         @endforeach
         <hr>
-    </div>
+    </div>-->
 </div>
 
 <style>
