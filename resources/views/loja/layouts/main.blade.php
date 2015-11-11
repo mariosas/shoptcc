@@ -10,13 +10,13 @@
         <title>Shop Homepage - Start Bootstrap Template</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="assets_loja/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{url('assets_loja/css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="assets_loja/css/shop-homepage.css" rel="stylesheet">
+        <link href="{{url('assets_loja/css/shop-homepage.css')}}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="assets_loja/css/shop-item.css" rel="stylesheet">
+        <link href="{{url('assets_loja/css/shop-item.css')}}" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,12 +53,12 @@
         <!-- /.container -->
 
         <!-- jQuery -->
-        <script src="assets_loja/js/jquery.js"></script>
+        <script src="{{url('assets_loja/js/jquery.js')}}"></script>
         
-        <script src="assets_loja/js/rating.js"></script>
+        <script src="{{url('assets_loja/js/rating.js')}}"></script>
         
         <!-- Bootstrap Core JavaScript -->
-        <script src="assets_loja/js/bootstrap.min.js"></script>
+        <script src="{{url('assets_loja/js/bootstrap.min.js')}}"></script>
 
     </body>
 
