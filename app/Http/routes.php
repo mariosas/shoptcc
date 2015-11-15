@@ -1,5 +1,7 @@
 <?php
 
+\Debugbar::disable();
+
 //Loja
 Route::get('/', 'HomeController@Home');
 Route::get('product/{id}', 'Loja\ProductsController@show');
@@ -19,7 +21,15 @@ Route::group(['middleware' => ['auth']], function (){
 });
 
 Route::get('login', function() {
-	return view("auth.login");
+	if(!\Auth::user()) {
+		return view("auth.login");
+	}else {
+		return redirect()->back();
+	}
+});
+
+Route::get('search', function() {
+	
 });
 
 Route::get('sair', function() {
@@ -37,6 +47,8 @@ Route::get('google-callback', 'Auth\AuthController@handleProviderCallbackGoogle'
 
 Route::get('admin/product', 'Admin\ProductsController@index');
 Route::get('admin/product/{id}/edit', 'Admin\ProductsController@edit');
+Route::get('admin/category', 'Admin\CategoryController@index');
+Route::get('admin/category/{id}/edit', 'Admin\CategoryController@edit');
 
 
 //Api

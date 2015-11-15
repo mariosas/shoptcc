@@ -8,7 +8,7 @@
             	@if($totalItens < 1)
 
 				<div class="panel">
-					<span><a href="{{url('')}}">Back</a></span>
+					<span><a href="{{url('')}}">Voltar</a></span>
 				</div>
 
 				@else
@@ -16,9 +16,9 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th class="text-center">Price</th>
+                            <th>Produto(s)</th>
+                            <th>Quantidade</th>
+                            <th class="text-center">Pre�o</th>
                             <th class="text-center">Total</th>
                             <th> </th>
                         </tr>
@@ -30,17 +30,15 @@
                         <tr>
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
-                                    <a class="thumbnail pull-left" href="#"> <img
+                                    <a class="thumbnail pull-left" href="{{url('product')}}/{{$cart->id}}"> <img
                                             class="media-object"
                                             src="{{$cart->options['icon']}}"
                                             style="width: 72px; height: 72px;">
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-                                            <a href="#">{{$cart->name}}</a>
+                                            <a href="{{url('product')}}/{{$cart->id}}">{{$cart->name}}</a>
                                         </h4>
-                                        <span>Status: </span><span class="text-success"><strong>In
-                                                Stock</strong></span>
                                     </div>
                                 </div>
                             </td>
@@ -53,11 +51,10 @@
 								</div>
 							</td>
 
-
 							<td class="col-sm-1 col-md-1 text-center"><strong>R$ {{number_format($cart->price, 2, ",",".")}}</strong></td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>R$ <?php echo number_format(($cart->price * $cart->qty), 2, ",",".") ?></strong></td>
                             <td class="col-sm-1 col-md-1">
-                                <a href="{{url('cart/remove')}}/{{$cart->rowid}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Remove</a>
+                                <a href="{{url('cart/remove')}}/{{$cart->rowid}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remover</a>
                             </td>
                         </tr>
 
@@ -85,10 +82,10 @@
                             <td> </td>
                             <td> </td>
                             <td>
-                                <a href="{{url('/')}}" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Continue Shopping</a>
+                                <a href="{{url('/')}}" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span> Continuar Comprando</a>
                             </td>
                             <td>
-                                <a href="{{url('checkout')}}" class="btn btn-success"><span class="glyphicon glyphicon-play"></span>Checkout</a>
+                                <a href="{{url('checkout')}}" class="btn btn-success"><span class="glyphicon glyphicon-play"></span> Finalizar Compra</a>
                             </td>
                         </tr>
                     </tbody>

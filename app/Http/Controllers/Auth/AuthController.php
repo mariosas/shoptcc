@@ -29,7 +29,7 @@ class AuthController extends Controller {
 		
 		$userDB = \DB::table('users')->where('email', $user->email)->first();
 		
-		if ($user->email == $userDB->email) {
+		if ($userDB != null && ($user->email == $userDB->email)) {
 			\Auth::loginUsingId($userDB->id);
 			return redirect("checkout");
 		}
@@ -85,28 +85,6 @@ class AuthController extends Controller {
 		
 		return redirect("checkout");
 		
-		// $user->token;
-	}
-	
-	/**
-	 * Redirect the user to the Facebook authentication page.
-	 *
-	 * @return Response
-	 */
-	public function redirectToProviderFacebook()
-	{
-		return Socialite::driver('facebook')->redirect();
-	}
-	
-	/**
-	 * Obtain the user information from Facebook.
-	 *
-	 * @return Response
-	 */
-	public function handleProviderCallbackFacebook()
-	{
-		dd(Socialite::driver('facebook')->user());
-	
 		// $user->token;
 	}
 	

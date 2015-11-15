@@ -9,19 +9,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/')}}">Start Bootstrap</a>
+            <a class="navbar-brand" href="{{url('/')}}">ShopTCC</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
             	
                 <li>
-                    <a href="{{url('cart')}}">Cart (<?php echo \Cart::count()?>) </a>
+                    <a href="{{url('cart')}}">Carrinho (<?php echo \Cart::count()?>) </a>
                 </li>
-
-				<li>
-					<!--  -->
-				</li>
 				
 			</ul>
 

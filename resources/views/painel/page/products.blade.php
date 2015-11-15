@@ -5,7 +5,7 @@
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Products</h1>
+			<h1 class="page-header">Produtos</h1>
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
@@ -14,7 +14,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Lista de produtos<div class="pull-right"><a href="{{url('admin/product/create')}}"><span class="glyphicon glyphicon-plus"></span></a></div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -22,12 +22,12 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Code</th>
-                                            <th>Icon</th>
-                                            <th>Name</th>
-                                            <th>Description</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
+                                            <th>Cod.</th>
+                                            <th>Icone</th>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Preço</th>
+                                            <th>Ação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,7 +55,6 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-	
 	
 </div>
 
