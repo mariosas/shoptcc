@@ -17,15 +17,10 @@
 			<a href="{{url('cart/add-product-cart')}}/{{$product->id}}"
 				class="pull-right btn btn-success">Comprar</a>
 		</div>
-		
-		<style>
-		#btnComprar {
-			margin-bottom: 7px;
-		}
-		</style>
 
 		<div class="ratings">
-            <p class="pull-right">{{$product->rating_count}} reviews</p>
+		<br><br><br>
+            <!-- <p class="pull-right">{{$product->rating_count}} reviews</p>
             <p>
                 @for($i = 1; $i <= $product->rating_cache; $i++)
                 <span class="glyphicon glyphicon-star"></span>
@@ -36,6 +31,7 @@
                 @endfor
                 {{$product->rating_cache}} stars
             </p>
+             -->
         </div>
     </div>
 
