@@ -6,7 +6,7 @@
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-			<p class="login-box-msg">Entre para iniciar sua sessão
+			<p class="login-box-msg">Entre para iniciar sua sessÃ£o
 						
 			<form method="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -14,9 +14,9 @@
 					<a href="{{url('login-google')}}"
 						class="btn btn-block btn-social btn-google-plus btn-flat"><i
 						class="fa fa-google-plus"></i> Entrar usando Google</a>
-					<a href="{{url('login-github')}}"
+					<!--<a href="{{url('login-github')}}"
 						class="btn btn-block btn-social btn-github btn-flat"><i
-						class="fa fa-github"></i> Entrar usando GitHub</a>
+						class="fa fa-github"></i> Entrar usando GitHub</a>-->
 				</div>
 				<!-- /.social-auth-links -->
 			</form>
